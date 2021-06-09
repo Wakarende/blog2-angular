@@ -24,7 +24,8 @@ export class AddBlogComponent implements OnInit {
   saveBlog(): void {
     const data = {
       title: this.blog.title,
-      description: this.blog.description
+      description: this.blog.description,
+      body: this.blog.body,
     };
 
     this.blogservice.create(data)
@@ -43,6 +44,7 @@ export class AddBlogComponent implements OnInit {
     this.blog = {
       title: '',
       description: '',
+      body: '',
       published: false
     };
   }

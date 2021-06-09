@@ -45,7 +45,7 @@ export class BlogsListComponent implements OnInit {
     this.currentIndex = index;
   }
 
-  removeAllTutorials(): void {
+  removeAllBlogs(): void {
     this.blogservice.deleteAll()
       .subscribe(
         response => {
@@ -69,3 +69,4 @@ export class BlogsListComponent implements OnInit {
         });
   }
 }
+
