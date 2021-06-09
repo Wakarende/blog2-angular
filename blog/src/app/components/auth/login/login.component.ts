@@ -18,4 +18,10 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  onSubmit(){
+    console.warn(this.myform.value)
+  }
+
+
+
 }
