@@ -1,1 +1,41 @@
-<p>add-blog works!</p>
+<!-- Jumbotron  -->
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">The J Word</h1>
+      <p class="lead my-3 ">Your Favourite Tech Blog.</p>
+      <p class="lead mb-0"><a href="#" class="text-white fw-bold"></a></p>
+    </div>
+  </div>
+  <!-- End Jumbotron -->
+  <!-- Add Blog Form  -->
+<div class="submit-form">
+  <div *ngIf="!submitted">
+    <div class="mb-3 form-group">
+      <label for="title" class="form-label">
+        <title> Title </title>
+      </label>
+      <input type="text" class="form-control" id="title" placeholder="title" required [(ngModel)]="blog.title" name="title">
+    </div>
+    <div class="mb-3 form-group">
+      <label for="exampleFormControlInput1" class="form-label">
+        <title>Description</title>
+      </label>
+      <input type="description" class="form-control" id="description" placeholder="short description" required
+        [(ngModel)]="blog.description" name="description">
+    </div>
+    <div class="mb-3 form-group">
+      <label for="body" class="form-label">Body</label>
+      <textarea class="form-control" id="body" rows="3" required [(ngModel)]="blog.body" name="body"></textarea>
+    </div>
+    <button class="btn btn-sm btn-outline-success" (click)="saveBlog()">Submit</button>
+  </div>
+  <div *ngIf="submitted">
+    <h4>Tutorial was submitted successfully!</h4>
+    <button class="btn btn-success btn-sm" (click)="newBlog()">Add</button>
+  </div>
+
+</div>
+
+
+<!-- End Blog Form  -->
