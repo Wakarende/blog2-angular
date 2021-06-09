@@ -44,7 +44,7 @@
       <label><strong>Description:</strong></label> {{ currentBlog.description }} </div>
     <div>
       <label><strong>Status:</strong></label> {{ currentBlog.published ? "Published" : "Pending" }} </div>
-    <a class="badge badge-warning" routerLink="/blogs/{{ currentBlog.id }}"> Edit </a>
+    <a class="badge badge-warning" routerLink="/blogs/{{ currentBlog.id }}/"> Edit </a>
   </div>
   <div *ngIf="!currentBlog">
     <br />

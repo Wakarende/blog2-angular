@@ -43,6 +43,7 @@ export class BlogDetailsComponent implements OnInit {
     const data = {
       title: this.currentBlog.title,
       description: this.currentBlog.description,
+      body: this.currentBlog.body,
       published: status
     };
 
@@ -75,7 +76,7 @@ export class BlogDetailsComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
-          this.router.navigate(['/tutorials']);
+          this.router.navigate(['']);
         },
         error => {
           console.log(error);

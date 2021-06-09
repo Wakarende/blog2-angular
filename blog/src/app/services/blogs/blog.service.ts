@@ -3,7 +3,10 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const baseUrl ='http://127.0.0.1:8000/api/blogs/'
+const baseUrl ='http://127.0.0.1:8000/api/blogs'
+const updateUrl = 'http://127.0.0.1:8000/api/blogs/update'
+const deleteUrl = 'http://127.0.0.1:8000/api/blogs/delete'
+
 
 @Injectable({
   providedIn: 'root'
@@ -25,15 +28,15 @@ export class BlogService {
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
+    return this.http.put(`${updateUrl}/${id}/`, data);
   }
 
   delete(id: any): Observable<any> {
-    return this.http.delete(`${baseUrl}/${id}`);
+    return this.http.delete(`${deleteUrl}/${id}/`);
   }
 
   deleteAll(): Observable<any> {
-    return this.http.delete(baseUrl);
+    return this.http.delete(deleteUrl);
   }
 
   findByTitle(title: any): Observable<Blog[]> {

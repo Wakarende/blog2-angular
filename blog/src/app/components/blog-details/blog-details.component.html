@@ -1,1 +1,35 @@
 <p>blog-details works!</p>
+<!-- Update Blog Form  -->
+<div class="update-form">
+  <h4 class="text-center">Update Form</h4>
+  <div *ngIf="currentBlog.id">
+    <div class="mb-3 form-group">
+      <label for="title" class="form-label">
+        <title> Title </title>
+      </label>
+      <input type="text" class="form-control" id="title" placeholder="title" required [(ngModel)]="currentBlog.title"
+        name="title">
+    </div>
+    <div class="mb-3 form-group">
+      <label for="exampleFormControlInput1" class="form-label">
+        <title>Description</title>
+      </label>
+      <input type="description" class="form-control" id="description" placeholder="short description" required
+        [(ngModel)]="currentBlog.description" name="description">
+    </div>
+    <div class="mb-3 form-group">
+      <label for="body" class="form-label">Body</label>
+      <textarea class="form-control" id="body" rows="3" required [(ngModel)]="currentBlog.body" name="body"></textarea>
+    </div>
+    <div class="form-group">
+      <label><strong>Status:</strong></label> {{ currentBlog.published ? "Published" : "Pending" }}</div>
+    <button class="btn btn-primary btn-sm " *ngIf="currentBlog.published" (click)="updatePublished(false)">
+      UnPublish </button>
+    <button *ngIf="!currentBlog.published" class="btn btn-primary btn-sm mr-2" (click)="updatePublished(true)"> Publish
+    </button>
+    <button class="btn btn-danger btn-sm mr-2" (click)="deleteBlog()">Delete</button>
+    <button type="submit" class="btn btn-success btn-sm" (click)="updateBlog()">Update</button>
+    <p>{{ message }}</p>
+  </div>
+</div>
+<!-- End Blog Form  -->
