@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { ModuleWithProviders } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
@@ -15,6 +15,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AddBlogComponent } from './components/add-blog/add-blog.component';
 import { BlogDetailsComponent } from './components/blog-details/blog-details.component';
 import { BlogsListComponent } from './components/blogs-list/blogs-list.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
 
 
 
@@ -29,6 +31,8 @@ const rootRouting: ModuleWithProviders<any> = RouterModule.forRoot([], { useHash
     AddBlogComponent,
     BlogDetailsComponent,
     BlogsListComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +40,7 @@ const rootRouting: ModuleWithProviders<any> = RouterModule.forRoot([], { useHash
     FormsModule,
     HttpClientModule,
     rootRouting,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
