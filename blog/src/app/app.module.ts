@@ -17,6 +17,9 @@ import { BlogDetailsComponent } from './components/blog-details/blog-details.com
 import { BlogsListComponent } from './components/blogs-list/blogs-list.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { AddCommentComponent } from './components/add-comment/add-comment.component';
+import { CommentListComponent } from './components/comment-list/comment-list.component';
+import { CommentDetailComponent } from './components/comment-detail/comment-detail.component';
 
 
 
@@ -33,6 +36,9 @@ const rootRouting: ModuleWithProviders<any> = RouterModule.forRoot([], { useHash
     BlogsListComponent,
     LoginComponent,
     RegisterComponent,
+    AddCommentComponent,
+    CommentListComponent,
+    CommentDetailComponent,
   ],
   imports: [
     BrowserModule,
