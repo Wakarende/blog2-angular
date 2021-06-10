@@ -1,35 +1,108 @@
-<p>blog-details works!</p>
-<!-- Update Blog Form  -->
-<div class="update-form">
-  <h4 class="text-center">Update Form</h4>
-  <div *ngIf="currentBlog.id">
-    <div class="mb-3 form-group">
-      <label for="title" class="form-label">
-        <title> Title </title>
-      </label>
-      <input type="text" class="form-control" id="title" placeholder="title" required [(ngModel)]="currentBlog.title"
-        name="title">
+<!-- Jumbotron  -->
+<main class="container-fluid">
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">The J Word</h1>
+      <p class="lead my-3 ">Your Favourite Tech Blog.</p>
+      <p class="lead mb-0"><a href="#" class="text-white fw-bold"></a></p>
     </div>
-    <div class="mb-3 form-group">
-      <label for="exampleFormControlInput1" class="form-label">
-        <title>Description</title>
-      </label>
-      <input type="description" class="form-control" id="description" placeholder="short description" required
-        [(ngModel)]="currentBlog.description" name="description">
-    </div>
-    <div class="mb-3 form-group">
-      <label for="body" class="form-label">Body</label>
-      <textarea class="form-control" id="body" rows="3" required [(ngModel)]="currentBlog.body" name="body"></textarea>
-    </div>
-    <div class="form-group">
-      <label><strong>Status:</strong></label> {{ currentBlog.published ? "Published" : "Pending" }}</div>
-    <button class="btn btn-primary btn-sm " *ngIf="currentBlog.published" (click)="updatePublished(false)">
-      UnPublish </button>
-    <button *ngIf="!currentBlog.published" class="btn btn-primary btn-sm mr-2" (click)="updatePublished(true)"> Publish
-    </button>
-    <button class="btn btn-danger btn-sm mr-2" (click)="deleteBlog()">Delete</button>
-    <button type="submit" class="btn btn-success btn-sm" (click)="updateBlog()">Update</button>
-    <p>{{ message }}</p>
   </div>
+  <!-- End Jumbotron -->
+ <!-- Post content-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <article class="mb-5">
+        <!-- Post header-->
+        <header class="mb-4">
+          <!-- Post title-->
+          <h1 class="fw-bolder mb-1">{{currentBlog.title}}</h1>
+          <!-- Post meta content-->
+          <div class="text-muted fst-italic mb-2">Posted on:</div>
+          <!-- Post categories-->
+          <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{currentBlog.description}}</a>
+          
+        </header>
+        <!-- Preview image figure-->
+        <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg"
+            alt="..." /></figure>
+        <!-- Post content-->
+        <section class="mb-5">
+          <p class="fs-5 mb-4">{{currentBlog.body}}</p>
+          <p class="fs-5 mb-4"></p>
+          <p class="fs-5 mb-4"></p>
+          <h2 class="fw-bolder mb-4 mt-5"></h2>
+          <p class="fs-5 mb-4"></p>
+          <p class="fs-5 mb-4"></p>
+        </section>
+      </article>
+    </div>
+    <!-- End Post Content  -->
+    <!-- sidebar  -->
+    <div class="col-lg-4">
+      <!-- Comment Form -->
+      <div class="card mb-4 mt-5">
+        <div class="card-header">Add Comment</div>
+        <div class="card-body">
+          <div class="input-group">
+            <form >
+            <input class="form-control" type="text" placeholder="add comment..." 
+             />
+            <button class="btn btn-primary mt-3 btn-sm" id="button-search" type="button">Comment</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End Comment Form  -->
+      <!-- Comments Display  -->
+      <div class="card mb-4 mt-5">
+        <div class="card-header">Side Widget</div>
+        <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and
+          feature the Bootstrap 5 card component!</div>
+      </div>
+      <!-- End Comments Display  -->
+    </div>
+    <!-- end sidebar  -->
+  </div>
+</div>
+<hr>
+<!-- Update Blog Form  -->
+<div class="container">
+<div class="update-form">
+  <h2 class="text-center mt-5">Update Form</h2>
+  <div class="card p-4 card-shadow">
+    <div *ngIf="currentBlog.id">
+      
+      <div class="mb-3 form-group">
+        <label for="title" class="form-label">
+          <title> Title </title>
+        </label>
+        <input type="text" class="form-control" id="title" placeholder="title" required [(ngModel)]="currentBlog.title"
+          name="title">
+      </div>
+      <div class="mb-3 form-group">
+        <label for="exampleFormControlInput1" class="form-label">
+          <title>Description</title>
+        </label>
+        <input type="description" class="form-control" id="description" placeholder="short description" required
+          [(ngModel)]="currentBlog.description" name="description">
+      </div>
+      <div class="mb-3 form-group">
+        <label for="body" class="form-label">Body</label>
+        <textarea class="form-control" id="body" rows="3" required [(ngModel)]="currentBlog.body" name="body"></textarea>
+      </div>
+      <div class="form-group">
+        <label><strong>Status:</strong></label> {{ currentBlog.published ? "Published" : "Pending" }}</div>
+      <button class="btn btn-primary btn-sm details-btn" *ngIf="currentBlog.published" (click)="updatePublished(false)">
+        UnPublish </button>
+      <button *ngIf="!currentBlog.published details-btn" class="btn btn-primary btn-sm mr-2"
+        (click)="updatePublished(true)"> Publish
+      </button>
+      <button class="btn btn-danger btn-sm mr-2 details-btn" (click)="deleteBlog()">Delete</button>
+      <button type="submit" class="btn btn-success btn-sm details-btn" (click)="updateBlog()">Update</button>
+      <p>{{ message }}</p>
+    </div>
+  </div>
+</div>
 </div>
 <!-- End Blog Form  -->
