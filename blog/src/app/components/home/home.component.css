@@ -1,0 +1,11 @@
+.jumbo{
+  background-color:#F8F9FA;
+}
+.blog_logo{
+  display: flex;
+  align-self: center;
+
+}
+.jumbo-text{
+  color: #6c757D;
+}

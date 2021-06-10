@@ -1,13 +1,13 @@
+
 <div class="card mb-4 mt-5">
-  <div class="card-header">Add Comment</div>
   <div class="card-body">
     <div class="submit-form">
       <div *ngIf="!submitted">
         <div class="input-group form-group">
-            <input class="form-control" type="text" placeholder="add comment" id="comment" required
+            <input class="form-control" type="text" placeholder="Add a comment" id="comment" required
               [(ngModel)]="comment.comment"/>
         </div>
-        <button class="btn btn-primary mt-3 btn-sm" id="button-search" type="button" (click)="saveComment()">Submit</button>
+        <button class="btn btn-outline-dark mt-3 btn-sm submit-btn" id="button-search" type="button" (click)="saveComment()">Submit</button>
       </div>
       <div *ngIf="submitted">
         <h4>Comment was submitted successfully!</h4>

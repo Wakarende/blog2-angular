@@ -1,0 +1,18 @@
+.nav-btn{
+  color: #00e6cb;
+  text-decoration: none;
+}
+
+.nav-link:hover{
+  color: #00e6cb;
+
+}
+
+.nav-link{
+  color: black;
+}
+
+.blog-logo{
+  width: 100px;
+  height: 100px;
+}

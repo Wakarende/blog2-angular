@@ -1,13 +1,11 @@
 <!-- Jumbotron  -->
-<main class="container-fluid">
-  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">The J Word</h1>
-      <p class="lead my-3 ">Your Favourite Tech Blog.</p>
-      <p class="lead mb-0"><a href="#" class="text-white fw-bold"></a></p>
-    </div>
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold text-center jumbo-text"> Tech Blog</h1>
+    <p class=" text-center lead">Your Favourite Tech Blog</p>
   </div>
-  <!-- End Jumbotron -->
+</div>
+<!-- End Jumbotron -->
  <!-- Post content-->
 <div class="container">
   <div class="row">
@@ -24,11 +22,10 @@
           
         </header>
         <!-- Preview image figure-->
-        <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg"
-            alt="..." /></figure>
+        
         <!-- Post content-->
         <section class="mb-5">
-          <p class="fs-5 mb-4">{{currentBlog.body}}</p>
+          <p class=" mb-4 blog-text">{{currentBlog.body}}</p>
           <p class="fs-5 mb-4"></p>
           <p class="fs-5 mb-4"></p>
           <h2 class="fw-bolder mb-4 mt-5"></h2>
@@ -51,11 +48,11 @@
     <!-- end sidebar  -->
   </div>
 </div>
-<hr>
+
 <!-- Update Blog Form  -->
 <div class="container">
 <div class="update-form">
-  <h2 class="text-center mt-5">Update Form</h2>
+  <h2 class="text-center mt-5 mb-5">Update Form</h2>
   <div class="card p-4 card-shadow">
     <div *ngIf="currentBlog.id">
       
@@ -79,13 +76,13 @@
       </div>
       <div class="form-group">
         <label><strong>Status:</strong></label> {{ currentBlog.published ? "Published" : "Pending" }}</div>
-      <button class="btn btn-primary btn-sm details-btn" *ngIf="currentBlog.published" (click)="updatePublished(false)">
+      <button class="btn btn-outline-dark btn-sm details-btn" *ngIf="currentBlog.published" (click)="updatePublished(false)">
         UnPublish </button>
-      <button *ngIf="!currentBlog.published details-btn" class="btn btn-primary btn-sm mr-2"
+      <button *ngIf="!currentBlog.published details-btn" class="btn btn-outline-dark btn-sm mr-2"
         (click)="updatePublished(true)"> Publish
       </button>
-      <button class="btn btn-danger btn-sm mr-2 details-btn" (click)="deleteBlog()">Delete</button>
-      <button type="submit" class="btn btn-success btn-sm details-btn" (click)="updateBlog()">Update</button>
+      <button class="btn btn-outline-dark btn-sm mr-2 details-btn" (click)="deleteBlog()">Delete</button>
+      <button type="submit" class="btn btn-outline-dark btn-sm details-btn" (click)="updateBlog()">Update</button>
       <p>{{ message }}</p>
     </div>
   </div>

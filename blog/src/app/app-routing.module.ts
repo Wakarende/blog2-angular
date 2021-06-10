@@ -1,3 +1,6 @@
+import { CommentDetailComponent } from './components/comment-detail/comment-detail.component';
+import { CommentListComponent } from './components/comment-list/comment-list.component';
+import { AddCommentComponent } from './components/add-comment/add-comment.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { AddBlogComponent } from './components/add-blog/add-blog.component';
@@ -15,10 +18,15 @@ const routes: Routes = [
   { path: 'blog/delete/:id', component: BlogDetailsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-];
+  { path: 'comments/:id', component: CommentDetailComponent },
+  { path: 'comments/update/:id', component: CommentDetailComponent },
+  { path: 'comments/delete/:id', component: CommentDetailComponent },
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
+
