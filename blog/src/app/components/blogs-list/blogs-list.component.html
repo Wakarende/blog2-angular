@@ -33,7 +33,7 @@
     <li class="list-group-item" *ngFor="let blog of blogs; let i = index" [class.active]="i == currentIndex"
       (click)="setActiveBlog(blog, i)"> {{ blog.title }} </li>
   </ul>
-  <button class="m-3 btn btn-sm btn-danger" (click)="removeAllBlogs()"> Remove All </button>
+  <!-- <button class="m-3 btn btn-sm btn-danger" (click)="removeAllBlogs()"> Remove All </button> -->
 </div>
 <div class="col-md-6">
   <div *ngIf="currentBlog">
@@ -44,7 +44,7 @@
       <label><strong>Description:</strong></label> {{ currentBlog.description }} </div>
     <div>
       <label><strong>Status:</strong></label> {{ currentBlog.published ? "Published" : "Pending" }} </div>
-    <a class="badge badge-warning" routerLink="/blogs/{{ currentBlog.id }}/"> Edit </a>
+    <a class="badge badge-warning" [routerLink]="['/blogs', currentBlog.id]"> Edit </a>
   </div>
   <div *ngIf="!currentBlog">
     <br />

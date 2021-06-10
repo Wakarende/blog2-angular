@@ -20,7 +20,7 @@ export class CommentsService {
   }
 
   get(id: any): Observable<Comment> {
-    return this.http.get(`${baseUrl}/${id}`);
+    return this.http.get(`${baseUrl}/${id}/`);
   }
 
   create(data: any): Observable<any> {

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const baseUrl ='http://127.0.0.1:8000/api/blogs'
+const baseUrl ='http://127.0.0.1:8000/api/blogs/'
 const updateUrl = 'http://127.0.0.1:8000/api/blogs/update'
 const deleteUrl = 'http://127.0.0.1:8000/api/blogs/delete'
 
@@ -20,7 +20,7 @@ export class BlogService {
   }
 
   get(id: any): Observable<Blog> {
-    return this.http.get(`${baseUrl}/${id}`);
+    return this.http.get(`${baseUrl}/${id}/`);
   }
 
   create(data: any): Observable<any> {
