@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private registerservice:RegisterService,
-    private route: ActivatedRoute, 
+    // private route: ActivatedRoute, 
     private router: Router
     )
      { }
@@ -28,21 +28,22 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  get registration(){
+  get f(){
     return this.registrationform.controls;
   }
 
   onSubmit(){
     const data={
-      username: this.registration.username.value,
-      email: this.registration.email.value,
-      password: this.registration.password.value,
+      username: this.f.username.value,
+      email: this.f.email.value,
+      password: this.f.password.value,
 
     };
     this.registerservice.register(data).subscribe(
-      (response) =>{
+      (response) => {
         alert('Registration successful');
         this.router.navigate(['login']);
+        console.log(response)
       },
       (error)=>{
         console.log(error)
