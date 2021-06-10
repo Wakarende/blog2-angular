@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Comment } from './../../interfaces/comment';
 import { Injectable } from '@angular/core';
 
-const baseUrl = 'http://127.0.0.1:8000/api/comments'
+const baseUrl = 'http://127.0.0.1:8000/api/comments/'
 const updateUrl = 'http://127.0.0.1:8000/api/comments/update'
 const deleteUrl = 'http://127.0.0.1:8000/api/comments/delete'
 

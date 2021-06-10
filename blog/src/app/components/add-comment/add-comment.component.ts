@@ -38,7 +38,7 @@ export class AddCommentComponent implements OnInit {
         });
   }
 
-  newBlog(): void {
+  newComment(): void {
     this.submitted = false;
     this.comment = {
       comment: '',
