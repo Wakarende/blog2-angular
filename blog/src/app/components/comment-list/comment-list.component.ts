@@ -39,7 +39,7 @@ export class CommentListComponent implements OnInit {
     this.currentIndex = -1;
   }
 
-  setActiveBlog(comment: Comment, index: number): void {
+  setActiveComment(comment: Comment, index: number): void {
     this.currentComment = comment;
     this.currentIndex = index;
   }

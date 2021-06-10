@@ -28,7 +28,7 @@
 <!-- End of Blog Posts  -->
 <div>
 <div class="col-md-6">
-  <h4>Tutorials List</h4>
+  <h4>Blogs</h4>
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let blog of blogs; let i = index" [class.active]="i == currentIndex"
       (click)="setActiveBlog(blog, i)"> {{ blog.title }} </li>
