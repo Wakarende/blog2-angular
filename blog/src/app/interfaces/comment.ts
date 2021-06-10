@@ -1,4 +1,8 @@
 export interface Comment {
-  comment?:string
+  id?: any
+  comment?: string
+  published?: boolean
+  article?: any
+  user?: any
 }
 

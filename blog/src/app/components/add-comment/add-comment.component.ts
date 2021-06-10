@@ -1,3 +1,5 @@
+import { CommentsService } from './../../services/blogs/comments.service';
+import { Comment } from './../../interfaces/comment';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCommentComponent implements OnInit {
 
-  constructor() { }
+  comment: Comment = {
+    comment: '',
+    published: false
+  };
+  submitted = false;
+
+
+
+  constructor(private commentservice:CommentsService) { }
 
   ngOnInit(): void {
+  }
+
+  saveComment(): void {
+    const data = {
+      comment: this.comment.comment, 
+    };
+
+    this.commentservice.create(data)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  newBlog(): void {
+    this.submitted = false;
+    this.comment = {
+      comment: '',
+      published: false
+    };
   }
 
 }
