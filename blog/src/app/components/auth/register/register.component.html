@@ -13,15 +13,15 @@
     <form [formGroup]="registrationform" (ngSubmit)='onSubmit()' >
       <div class="form-group">
         <label for="username" class="form-label">Username</label>
-        <input type="text" class="form-control" name="username" id="username" formControName='username'>
+        <input type="text" class="form-control"  id="username" formControlName='username'>
       </div>
       <div class="form-group">
         <label for="email" class="form-label">Email</label>
-        <input type="text" class="form-control" name="email" id="email" formControName='email'>
+        <input type="text" class="form-control"  id="email" formControlName='email'>
       </div>
       <div class="form-group">
         <label for="password" class="form-label">Password</label>
-        <input type="text" class="form-control" name="password" id="password" formControName='password'>
+        <input type="text" class="form-control"  id="password" formControlName='password'>
       </div>
       <button class="btn btn-sm btn-outline-dark mt-3 submit-btn" type="submit">Sign Up</button>
     </form>  

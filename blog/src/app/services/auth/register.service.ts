@@ -17,7 +17,7 @@ export class RegisterService {
 
   constructor(private http:HttpClient) { }
 
-  register(data: { username: any; email: any; password:any }) {
+  register(data: { username:string; email: string; password:string }) {
     return this.http.post(this.registerUrl, data);
   }
 
